@@ -32,6 +32,7 @@
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Browser));
       this.gb_Details = new System.Windows.Forms.GroupBox();
       this.cmb_UserAgent = new System.Windows.Forms.ComboBox();
+      this.cb_UserAgent = new System.Windows.Forms.CheckBox();
       this.cb_Cookies = new System.Windows.Forms.CheckBox();
       this.bt_Open = new System.Windows.Forms.Button();
       this.tb_UserAgent = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@
       this.l_Cookies = new System.Windows.Forms.Label();
       this.l_URL = new System.Windows.Forms.Label();
       this.tb_URL = new System.Windows.Forms.TextBox();
-      this.cb_UserAgent = new System.Windows.Forms.CheckBox();
       this.gb_WebPage = new System.Windows.Forms.GroupBox();
       this.wb_MiniBrowser = new System.Windows.Forms.WebBrowser();
       this.bgw_GetAccessToken = new System.ComponentModel.BackgroundWorker();
@@ -63,10 +63,11 @@
       this.gb_Details.Controls.Add(this.l_URL);
       this.gb_Details.Controls.Add(this.tb_URL);
       this.gb_Details.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.gb_Details.Location = new System.Drawing.Point(11, 5);
-      this.gb_Details.Margin = new System.Windows.Forms.Padding(5);
+      this.gb_Details.Location = new System.Drawing.Point(16, 8);
+      this.gb_Details.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
       this.gb_Details.Name = "gb_Details";
-      this.gb_Details.Size = new System.Drawing.Size(712, 125);
+      this.gb_Details.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.gb_Details.Size = new System.Drawing.Size(1068, 192);
       this.gb_Details.TabIndex = 0;
       this.gb_Details.TabStop = false;
       // 
@@ -75,11 +76,24 @@
       this.cmb_UserAgent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.cmb_UserAgent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cmb_UserAgent.FormattingEnabled = true;
-      this.cmb_UserAgent.Location = new System.Drawing.Point(636, 84);
+      this.cmb_UserAgent.Location = new System.Drawing.Point(954, 129);
+      this.cmb_UserAgent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.cmb_UserAgent.Name = "cmb_UserAgent";
-      this.cmb_UserAgent.Size = new System.Drawing.Size(59, 21);
+      this.cmb_UserAgent.Size = new System.Drawing.Size(86, 28);
       this.cmb_UserAgent.TabIndex = 6;
       this.cmb_UserAgent.SelectedIndexChanged += new System.EventHandler(this.CMB_UserAgent_SelectedIndexChanged);
+      // 
+      // cb_UserAgent
+      // 
+      this.cb_UserAgent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      this.cb_UserAgent.AutoSize = true;
+      this.cb_UserAgent.Location = new System.Drawing.Point(859, 135);
+      this.cb_UserAgent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.cb_UserAgent.Name = "cb_UserAgent";
+      this.cb_UserAgent.Size = new System.Drawing.Size(79, 24);
+      this.cb_UserAgent.TabIndex = 6;
+      this.cb_UserAgent.Text = "Use it";
+      this.cb_UserAgent.UseVisualStyleBackColor = true;
       // 
       // cb_Cookies
       // 
@@ -87,9 +101,10 @@
       this.cb_Cookies.AutoSize = true;
       this.cb_Cookies.Checked = true;
       this.cb_Cookies.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.cb_Cookies.Location = new System.Drawing.Point(573, 63);
+      this.cb_Cookies.Location = new System.Drawing.Point(859, 97);
+      this.cb_Cookies.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.cb_Cookies.Name = "cb_Cookies";
-      this.cb_Cookies.Size = new System.Drawing.Size(53, 17);
+      this.cb_Cookies.Size = new System.Drawing.Size(79, 24);
       this.cb_Cookies.TabIndex = 5;
       this.cb_Cookies.Text = "Use it";
       this.cb_Cookies.UseVisualStyleBackColor = true;
@@ -98,9 +113,10 @@
       // 
       this.bt_Open.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.bt_Open.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.bt_Open.Location = new System.Drawing.Point(636, 30);
+      this.bt_Open.Location = new System.Drawing.Point(954, 46);
+      this.bt_Open.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.bt_Open.Name = "bt_Open";
-      this.bt_Open.Size = new System.Drawing.Size(59, 23);
+      this.bt_Open.Size = new System.Drawing.Size(88, 35);
       this.bt_Open.TabIndex = 4;
       this.bt_Open.Text = "Open";
       this.bt_Open.UseVisualStyleBackColor = true;
@@ -110,27 +126,30 @@
       // 
       this.tb_UserAgent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-      this.tb_UserAgent.Location = new System.Drawing.Point(105, 86);
+      this.tb_UserAgent.Location = new System.Drawing.Point(158, 132);
+      this.tb_UserAgent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.tb_UserAgent.Name = "tb_UserAgent";
-      this.tb_UserAgent.Size = new System.Drawing.Size(455, 20);
+      this.tb_UserAgent.Size = new System.Drawing.Size(680, 26);
       this.tb_UserAgent.TabIndex = 3;
       // 
       // tb_Cookies
       // 
       this.tb_Cookies.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-      this.tb_Cookies.Location = new System.Drawing.Point(105, 60);
+      this.tb_Cookies.Location = new System.Drawing.Point(158, 92);
+      this.tb_Cookies.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.tb_Cookies.Name = "tb_Cookies";
-      this.tb_Cookies.Size = new System.Drawing.Size(455, 20);
+      this.tb_Cookies.Size = new System.Drawing.Size(680, 26);
       this.tb_Cookies.TabIndex = 2;
       // 
       // l_UserAgent
       // 
       this.l_UserAgent.AutoSize = true;
       this.l_UserAgent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.l_UserAgent.Location = new System.Drawing.Point(16, 86);
+      this.l_UserAgent.Location = new System.Drawing.Point(24, 132);
+      this.l_UserAgent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.l_UserAgent.Name = "l_UserAgent";
-      this.l_UserAgent.Size = new System.Drawing.Size(69, 13);
+      this.l_UserAgent.Size = new System.Drawing.Size(101, 20);
       this.l_UserAgent.TabIndex = 0;
       this.l_UserAgent.Text = "User agent";
       // 
@@ -138,9 +157,10 @@
       // 
       this.l_Cookies.AutoSize = true;
       this.l_Cookies.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.l_Cookies.Location = new System.Drawing.Point(16, 60);
+      this.l_Cookies.Location = new System.Drawing.Point(24, 92);
+      this.l_Cookies.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.l_Cookies.Name = "l_Cookies";
-      this.l_Cookies.Size = new System.Drawing.Size(52, 13);
+      this.l_Cookies.Size = new System.Drawing.Size(76, 20);
       this.l_Cookies.TabIndex = 0;
       this.l_Cookies.Text = "Cookies";
       // 
@@ -148,9 +168,10 @@
       // 
       this.l_URL.AutoSize = true;
       this.l_URL.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.l_URL.Location = new System.Drawing.Point(16, 33);
+      this.l_URL.Location = new System.Drawing.Point(24, 51);
+      this.l_URL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.l_URL.Name = "l_URL";
-      this.l_URL.Size = new System.Drawing.Size(32, 13);
+      this.l_URL.Size = new System.Drawing.Size(46, 20);
       this.l_URL.TabIndex = 0;
       this.l_URL.Text = "URL";
       // 
@@ -158,22 +179,12 @@
       // 
       this.tb_URL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-      this.tb_URL.Location = new System.Drawing.Point(105, 33);
+      this.tb_URL.Location = new System.Drawing.Point(158, 51);
+      this.tb_URL.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.tb_URL.Name = "tb_URL";
-      this.tb_URL.Size = new System.Drawing.Size(455, 20);
+      this.tb_URL.Size = new System.Drawing.Size(680, 26);
       this.tb_URL.TabIndex = 1;
       this.tb_URL.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TB_URL_KeyDown);
-      // 
-      // cb_UserAgent
-      // 
-      this.cb_UserAgent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-      this.cb_UserAgent.AutoSize = true;
-      this.cb_UserAgent.Location = new System.Drawing.Point(573, 88);
-      this.cb_UserAgent.Name = "cb_UserAgent";
-      this.cb_UserAgent.Size = new System.Drawing.Size(53, 17);
-      this.cb_UserAgent.TabIndex = 6;
-      this.cb_UserAgent.Text = "Use it";
-      this.cb_UserAgent.UseVisualStyleBackColor = true;
       // 
       // gb_WebPage
       // 
@@ -181,20 +192,23 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
       this.gb_WebPage.Controls.Add(this.wb_MiniBrowser);
-      this.gb_WebPage.Location = new System.Drawing.Point(12, 149);
+      this.gb_WebPage.Location = new System.Drawing.Point(18, 229);
+      this.gb_WebPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.gb_WebPage.Name = "gb_WebPage";
-      this.gb_WebPage.Size = new System.Drawing.Size(714, 356);
+      this.gb_WebPage.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.gb_WebPage.Size = new System.Drawing.Size(1071, 548);
       this.gb_WebPage.TabIndex = 1;
       this.gb_WebPage.TabStop = false;
       // 
       // wb_MiniBrowser
       // 
       this.wb_MiniBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.wb_MiniBrowser.Location = new System.Drawing.Point(3, 16);
-      this.wb_MiniBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+      this.wb_MiniBrowser.Location = new System.Drawing.Point(4, 24);
+      this.wb_MiniBrowser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.wb_MiniBrowser.MinimumSize = new System.Drawing.Size(30, 31);
       this.wb_MiniBrowser.Name = "wb_MiniBrowser";
       this.wb_MiniBrowser.ScriptErrorsSuppressed = true;
-      this.wb_MiniBrowser.Size = new System.Drawing.Size(708, 337);
+      this.wb_MiniBrowser.Size = new System.Drawing.Size(1063, 519);
       this.wb_MiniBrowser.TabIndex = 7;
       // 
       // bgw_GetAccessToken
@@ -203,12 +217,13 @@
       // 
       // Browser
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(740, 517);
+      this.ClientSize = new System.Drawing.Size(1110, 795);
       this.Controls.Add(this.gb_WebPage);
       this.Controls.Add(this.gb_Details);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+      this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.MinimizeBox = false;
       this.Name = "Browser";
       this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
