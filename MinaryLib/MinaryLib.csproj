@@ -93,6 +93,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttackService\IAttackServiceHost.cs" />
     <Compile Include="AttackService\ServiceParameters.cs" />
     <Compile Include="AttackService\ServiceStatus.cs" />
     <Compile Include="AttackService\SubModule.cs" />
