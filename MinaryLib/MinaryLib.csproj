@@ -93,17 +93,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AttackService\IAttackServiceHost.cs" />
-    <Compile Include="AttackService\ServiceParameters.cs" />
-    <Compile Include="AttackService\ServiceStatus.cs" />
-    <Compile Include="AttackService\SubModule.cs" />
+    <Compile Include="AttackService\Class\AttackServiceParameters.cs" />
+    <Compile Include="AttackService\Interface\IAttackServiceHost.cs" />
+    <Compile Include="AttackService\Class\StartServiceParameters.cs" />
+    <Compile Include="AttackService\Enum\ServiceStatus.cs" />
+    <Compile Include="AttackService\Class\SubModule.cs" />
     <Compile Include="DataTypes\IpProtocols.cs" />
     <Compile Include="DataTypes\TemplatePluginData.cs" />
     <Compile Include="DSL\Config.cs" />
     <Compile Include="Exceptions\MinaryErrorException.cs" />
     <Compile Include="Exceptions\MinaryWarningException.cs" />
     <Compile Include="FirewallManager.cs" />
-    <Compile Include="AttackService\IAttackService.cs" />
+    <Compile Include="AttackService\Interface\IAttackService.cs" />
     <Compile Include="Plugin\IPlugin.cs" />
     <Compile Include="Plugin\IPluginHost.cs" />
     <Compile Include="MiniBrowser\1_Presentation\MiniBrowser.cs">
@@ -159,6 +160,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <PostBuildEvent>if not exist "$(SolutionDir)\..\Minary\EXTERNAL\" mkdir "$(SolutionDir)\..\Minary\EXTERNAL\"
+echo xcopy /Y  $(ProjectDir)\bin\$(Configuration)\$(TargetFileName) $(SolutionDir)\..\Minary\EXTERNAL\
 xcopy /Y  $(ProjectDir)\bin\$(Configuration)\$(TargetFileName) $(SolutionDir)\..\Minary\EXTERNAL\</PostBuildEvent>
   </PropertyGroup>
 </Project>

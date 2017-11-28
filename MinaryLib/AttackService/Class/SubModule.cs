@@ -1,4 +1,4 @@
-﻿namespace MinaryLib.AttackService
+﻿namespace MinaryLib.AttackService.Class
 {
   public class SubModule
   {
@@ -16,9 +16,9 @@
 
     public SubModule(string moduleName, string workingDirectory, string configFilePath)
     {
-      ModuleName = moduleName;
-      WorkingDirectory = workingDirectory;
-      ConfigFilePath = configFilePath;
+      this.ModuleName = moduleName;
+      this.WorkingDirectory = workingDirectory;
+      this.ConfigFilePath = configFilePath;
     }
 
     #endregion

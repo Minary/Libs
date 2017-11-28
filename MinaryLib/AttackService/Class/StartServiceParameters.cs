@@ -1,9 +1,9 @@
-﻿namespace MinaryLib.AttackService
+﻿namespace MinaryLib.AttackService.Class
 {
   using System.Collections.Generic;
 
 
-  public class ServiceParameters
+  public class StartServiceParameters
   {
 
     #region MEMBERS

@@ -1,6 +1,6 @@
 ﻿namespace MinaryLib.Plugin
 {
-  using MinaryLib.AttackService;
+  using MinaryLib.AttackService.Interface;
   using System;
   using System.Collections.Generic;
   using System.Windows.Forms;
