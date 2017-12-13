@@ -87,8 +87,8 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>if not exist "$(SolutionDir)\..\Minary\EXTERNAL\" mkdir "$(SolutionDir)\..\Minary\EXTERNAL\"
-xcopy /Y  $(ProjectDir)\bin\$(Configuration)\$(TargetFileName) $(SolutionDir)\..\Minary\EXTERNAL\</PostBuildEvent>
+    <PostBuildEvent>echo xcopy /Y  "$(TargetPath)" "$(SolutionDir)..\Minary\EXTERNAL\"
+xcopy /Y  "$(TargetPath)" "$(SolutionDir)..\Minary\EXTERNAL\"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
