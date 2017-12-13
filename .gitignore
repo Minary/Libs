@@ -42,7 +42,7 @@
 
 # Ignore directories that are not part of the solution/project basis files. 
 #
-
+.vs/
 **/bin/Release/*
 **/bin/Debug/*
 **/obj/
