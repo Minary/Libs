@@ -159,10 +159,10 @@
     </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>if not exist "$(SolutionDir)..\Minary\EXTERNAL" (
-  mkdir "$(SolutionDir)..\Minary\EXTERNAL"
+    <PostBuildEvent>if not exist "$(ProjectDir)..\..\Minary\EXTERNAL" (
+  mkdir "$(ProjectDir)..\..\Minary\EXTERNAL"
 )
-echo xcopy /Y  "$(TargetPath)" "$(SolutionDir)..\Minary\EXTERNAL\"
-xcopy /Y  "$(TargetPath)" "$(SolutionDir)..\Minary\EXTERNAL\"</PostBuildEvent>
+echo xcopy /Y  "$(TargetPath)" "$(ProjectDir)..\..\Minary\EXTERNAL\"
+xcopy /Y  "$(TargetPath)" "$(ProjectDir)..\..\Minary\EXTERNAL\"</PostBuildEvent>
   </PropertyGroup>
 </Project>
