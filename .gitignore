@@ -34,7 +34,7 @@
 # Ignore NuGet Packages
 *.nupkg
 # Ignore the packages folder
-#**/packages/*
+**/packages/*
 # except build/, which is used as an MSBuild target.
 !**/packages/build/
 #!**/packages/repositories.config
