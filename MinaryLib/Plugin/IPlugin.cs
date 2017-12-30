@@ -31,8 +31,6 @@
 
     void OnInit();
 
-    void OnStartUpdate();
-
     void OnShutDown();
 
     void OnStartAttack();
