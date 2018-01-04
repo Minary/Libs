@@ -1,2 +1,2 @@
 # Libs
-Libraries for Minary GUI, plugins and tools
+This repository contains the libraries for Minary GUI, plugins and tools.
