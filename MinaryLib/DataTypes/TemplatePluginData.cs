@@ -7,19 +7,11 @@
   public class TemplatePluginData
   {
 
-    #region MEMBERS
-
-    private byte[] pluginDataSearchPatternItems;
-    private byte[] pluginConfigurationItems;
-
-    #endregion
-
-
     #region PROPERTIES
 
-    public byte[] PluginDataSearchPatternItems { get { return this.pluginDataSearchPatternItems; } set { this.pluginDataSearchPatternItems = value; } }
+    public byte[] PluginDataSearchPatternItems { get; set; }
 
-    public byte[] PluginConfigurationItems { get { return this.pluginConfigurationItems; } set { this.pluginConfigurationItems = value; } }
+    public byte[] PluginConfigurationItems { get; set; }
 
     #endregion
 
@@ -32,8 +24,8 @@
 
     public TemplatePluginData(byte[] pluginDataSearchPatternItems, byte[] pluginConfigurationItems)
     {
-      this.pluginDataSearchPatternItems = pluginDataSearchPatternItems;
-      this.pluginConfigurationItems = pluginConfigurationItems;
+      this.PluginDataSearchPatternItems = pluginDataSearchPatternItems;
+      this.PluginConfigurationItems = pluginConfigurationItems;
     }
 
     #endregion

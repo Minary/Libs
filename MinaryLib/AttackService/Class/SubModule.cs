@@ -6,7 +6,9 @@
     #region MEMBERS
 
     public string ModuleName { get; set; }
+
     public string WorkingDirectory { get; set; }
+
     public string ConfigFilePath { get; set; }
 
     #endregion

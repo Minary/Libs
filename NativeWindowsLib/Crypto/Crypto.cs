@@ -6,7 +6,6 @@
   using System.IO;
   using System.Runtime.InteropServices;
   using System.Security.Cryptography.X509Certificates;
-  using System.Text.RegularExpressions;
   using CryptoTypes = NativeWindowsLib.DataTypes.Crypto;
   using TimeTypes = NativeWindowsLib.DataTypes.Time;
   using RTHelpers = System.Runtime.CompilerServices.RuntimeHelpers;
@@ -20,9 +19,8 @@
 
     public static X509Certificate2Collection GetCertificatesFromStoreFile(string certificateFilePath, string password)
     {
-
       // Create a collection object and populate it using the PFX file
-      X509Certificate2Collection certificateCollection = new X509Certificate2Collection();
+      var certificateCollection = new X509Certificate2Collection();
       certificateCollection.Import(certificateFilePath, password, X509KeyStorageFlags.PersistKeySet);
 
       if (certificateCollection.Count <= 0)
@@ -36,12 +34,14 @@
 
     public static void CreateNewCertificate(string certificateOutputPath, string hostName, DateTime validityStartDate, DateTime validityEndDate)
     {
-      if (string.IsNullOrEmpty(certificateOutputPath) || string.IsNullOrWhiteSpace(certificateOutputPath))
+      if (string.IsNullOrEmpty(certificateOutputPath) || 
+          string.IsNullOrWhiteSpace(certificateOutputPath))
       {
         throw new Exception("The certificate output path is invalid");
       }
 
-      if (string.IsNullOrEmpty(hostName) || string.IsNullOrWhiteSpace(hostName))
+      if (string.IsNullOrEmpty(hostName) || 
+          string.IsNullOrWhiteSpace(hostName))
       {
         throw new Exception("The hostName is invalid");
       }
@@ -72,7 +72,7 @@
       }
 
       byte[] c = CreateSelfSignCertificatePfx(
-                              string.Format("CN={0}", hostName), //"CN=localhost", //host name
+                              $"CN={hostName}", //"CN=localhost", //host name
                               validityStartDate, //not valid before
                               validityEndDate, //not valid after
                               string.Empty); //password to encrypt key file
@@ -156,17 +156,17 @@
         x500 = string.Empty;
       }
 
-      TimeTypes.SystemTime startSystemTime = ToSystemTime(startTime);
-      TimeTypes.SystemTime endSystemTime = ToSystemTime(endTime);
-      string containerName = Guid.NewGuid().ToString();
+      var startSystemTime = ToSystemTime(startTime);
+      var endSystemTime = ToSystemTime(endTime);
+      var containerName = Guid.NewGuid().ToString();
 
-      GCHandle dataHandle = new GCHandle();
-      IntPtr providerContext = IntPtr.Zero;
-      IntPtr cryptKey = IntPtr.Zero;
-      IntPtr certContext = IntPtr.Zero;
-      IntPtr certStore = IntPtr.Zero;
-      IntPtr storeCertContext = IntPtr.Zero;
-      IntPtr passwordPtr = IntPtr.Zero;
+      var dataHandle = new GCHandle();
+      var providerContext = IntPtr.Zero;
+      var cryptKey = IntPtr.Zero;
+      var certContext = IntPtr.Zero;
+      var certStore = IntPtr.Zero;
+      var storeCertContext = IntPtr.Zero;
+      var passwordPtr = IntPtr.Zero;
       RTHelpers.PrepareConstrainedRegions();
 
       try

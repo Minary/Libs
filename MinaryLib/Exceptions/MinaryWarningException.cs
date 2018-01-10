@@ -1,7 +1,8 @@
-﻿using System;
-
-namespace MinaryLib.Exceptions
+﻿namespace MinaryLib.Exceptions
 {
+  using System;
+
+
   public class MinaryWarningException : Exception
   {
     public MinaryWarningException(string message)

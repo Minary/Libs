@@ -80,16 +80,15 @@ namespace Minary.MiniBrowser
       {
         if (!url.ToLower().StartsWith("http"))
         {
-          url = string.Format("http://{0}", url);
+          url = $"http://{url}";
           this.tb_URL.Text = url;
         }
       }
 
 
-      string requestedUrl = this.tb_URL.Text;
+      var requestedUrl = this.tb_URL.Text;
 
       headerData = string.Empty;
-
       this.taskLayer.ClearIECache();
       this.taskLayer.ClearCookies();
 
@@ -113,18 +112,20 @@ namespace Minary.MiniBrowser
         }
       }
 
-      if (this.cb_UserAgent.Checked && this.tb_UserAgent.Text.Length > 0)
+      if (this.cb_UserAgent.Checked && 
+          this.tb_UserAgent.Text.Length > 0)
       {
-        headerData = "User-Agent: " + this.tb_UserAgent.Text + "\r\n";
+        headerData = $"User-Agent: {this.tb_UserAgent.Text}\r\n";
       }
       else
       {
-        headerData = string.Format("User-Agent: {0}\r\n", this.tb_UserAgent.Text);
+        headerData = $"User-Agent: {this.tb_UserAgent.Text}\r\n";
       }
 
-      if (this.cb_Cookies.Checked && this.tb_Cookies.Text.Length > 0)
+      if (this.cb_Cookies.Checked && 
+          this.tb_Cookies.Text.Length > 0)
       {
-        headerData += "Cookie: " + this.tb_Cookies.Text + "\r\n";
+        headerData += $"Cookie: {this.tb_Cookies.Text}\r\n";
       }
 
       DeleteUrlCacheEntry(requestedUrl);
@@ -146,17 +147,15 @@ namespace Minary.MiniBrowser
     /// <param firewallRuleName="e"></param>
     private void BT_Open_Click(object sender, EventArgs e)
     {
-      string url = this.tb_URL.Text;
-      string host = string.Empty;
-      string tmpHost = string.Empty;
+      var url = this.tb_URL.Text;
+      var host = string.Empty;
+      var tmpHost = string.Empty;
 
-      if (!string.IsNullOrEmpty(url))
+      if (string.IsNullOrEmpty(url) == false &&
+          url.Contains(Uri.SchemeDelimiter) == false)
       {
-        if (!url.Contains(Uri.SchemeDelimiter))
-        {
-          url = string.Concat(Uri.UriSchemeHttp, Uri.SchemeDelimiter, url);
-          this.tb_URL.Text = url;
-        }
+        url = string.Concat(Uri.UriSchemeHttp, Uri.SchemeDelimiter, url);
+        this.tb_URL.Text = url;
       }
 
       try
@@ -169,10 +168,8 @@ namespace Minary.MiniBrowser
       }
 
       headerData = string.Empty;
-
       this.taskLayer.ClearIECache();
       this.taskLayer.ClearCookies();
-
 
       if (this.cb_Cookies.Checked && this.tb_Cookies.Text.Length > 0)
       {
@@ -180,7 +177,8 @@ namespace Minary.MiniBrowser
         {
           foreach (string tmpCookie in this.tb_Cookies.Text.ToString().Split(';'))
           {
-            if (tmpCookie.Length > 0 && tmpCookie.Contains("="))
+            if (tmpCookie.Length > 0 && 
+                tmpCookie.Contains("="))
             {
               Regex regex = new Regex("=");
               string[] substrings = regex.Split(tmpCookie, 2);

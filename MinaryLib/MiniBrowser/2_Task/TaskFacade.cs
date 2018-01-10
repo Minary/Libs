@@ -19,11 +19,6 @@ namespace Minary.MiniBrowser
 
     #region PUBLIC
 
-    private TaskFacade()
-    {
-    }
-
-
     /// <summary>
     /// Create single instance
     /// </summary>
@@ -44,7 +39,7 @@ namespace Minary.MiniBrowser
     /// </summary>
     public void ClearIECache()
     {
-      Process process = new Process();
+      var process = new Process();
       process.StartInfo.FileName = "cmd.exe";
       process.StartInfo.Arguments = "/c " + "del /f /s /q \"%userprofile%\\Local Settings\\Temporary Internet Files\\*.*\"";
       process.StartInfo.UseShellExecute = false;
@@ -63,7 +58,7 @@ namespace Minary.MiniBrowser
     /// </summary>
     public void ClearCookies()
     {
-      DirectoryInfo dir = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Cookies));
+      var dir = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Cookies));
       foreach (FileInfo info in dir.GetFiles("*.txt"))
       {
         info.Delete();
@@ -73,6 +68,14 @@ namespace Minary.MiniBrowser
 
     #endregion
 
-  }
 
+    #region PRIVATE
+    
+    private TaskFacade()
+    {
+    }
+
+    #endregion
+
+  }
 }
