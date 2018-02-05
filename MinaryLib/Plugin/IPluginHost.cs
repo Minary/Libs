@@ -25,6 +25,8 @@
 
     string CurrentIP { get; }
 
+    bool AttackStarted { get;  }
+
     List<Tuple<string, string, string>> ReachableSystemsList { get; } // MAC, IP, Vendor
 
     string HostWorkingDirectory { get; }
