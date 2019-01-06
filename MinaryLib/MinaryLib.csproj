@@ -101,6 +101,10 @@
     <Compile Include="Exceptions\MinaryWarningException.cs" />
     <Compile Include="FirewallManager.cs" />
     <Compile Include="AttackService\Interface\IAttackService.cs" />
+    <Compile Include="MiniBrowser\1_Presentation\MiniBrowser_Events.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MiniBrowser\DataTypes\UserAgent.cs" />
     <Compile Include="Plugin\IPlugin.cs" />
     <Compile Include="Plugin\IPluginHost.cs" />
     <Compile Include="MiniBrowser\1_Presentation\MiniBrowser.cs">
