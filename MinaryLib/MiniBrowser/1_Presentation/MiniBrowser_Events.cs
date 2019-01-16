@@ -10,6 +10,13 @@ namespace Minary.MiniBrowser
   public partial class Browser
   {
 
+    #region MEMBERS
+
+    private static string headerData;
+
+    #endregion
+
+
     #region EVENTS
 
     /// <summary>
