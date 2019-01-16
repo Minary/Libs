@@ -33,6 +33,8 @@
 
     void OnShutDown();
 
+    void OnPrepareAttack();
+
     void OnStartAttack();
 
     void OnStopAttack();
