@@ -2,6 +2,7 @@
 {
   using MinaryLib.AttackService.Class;
   using MinaryLib.AttackService.Enum;
+  using System.Collections.Generic;
 
 
   public interface IAttackService
@@ -18,7 +19,7 @@
 
     #region PUBLIC
 
-    ServiceStatus StartService(StartServiceParameters serviceParameters);
+    ServiceStatus StartService(StartServiceParameters hostParameters, Dictionary<string, object> pluginsParameters);
 
     ServiceStatus StopService();
 
