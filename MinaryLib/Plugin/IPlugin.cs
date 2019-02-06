@@ -33,7 +33,7 @@
 
     void OnShutDown();
 
-    object OnPrepareAttack();
+    List<object> OnPrepareAttack();
 
     void OnStartAttack();
 
