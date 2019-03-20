@@ -20,7 +20,6 @@
     #region PUBLIC
 
     ServiceStatus StartService(StartServiceParameters hostParameters, Dictionary<string, List<object>> pluginsParameters);
-//    ServiceStatus StartService(StartServiceParameters hostParameters, Dictionary<string, List<string>> pluginsParameters);
 
     ServiceStatus StopService();
 
