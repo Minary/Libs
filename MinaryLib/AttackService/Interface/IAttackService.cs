@@ -23,6 +23,8 @@
 
     ServiceStatus StopService();
 
+    bool WriteConfigFiles(StartServiceParameters hostParameters, Dictionary<string, List<object>> pluginsParameters);
+
     #endregion
 
   }
