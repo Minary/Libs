@@ -23,7 +23,7 @@
 
     ServiceStatus StopService();
 
-    bool WriteConfigFiles(StartServiceParameters hostParameters, Dictionary<string, List<object>> pluginsParameters);
+    void WriteTargetSystemsConfigFile(Dictionary<string, string> targetList);
 
     #endregion
 
