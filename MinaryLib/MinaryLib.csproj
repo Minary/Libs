@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttackService\Class\AttackServiceParameters.cs" />
+    <Compile Include="AttackService\Enum\ServiceStartMode.cs" />
     <Compile Include="AttackService\Interface\IAttackServiceHost.cs" />
     <Compile Include="AttackService\Class\StartServiceParameters.cs" />
     <Compile Include="AttackService\Enum\ServiceStatus.cs" />

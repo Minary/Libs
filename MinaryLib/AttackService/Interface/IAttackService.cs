@@ -14,6 +14,8 @@
 
     ServiceStatus Status { get; set; }
 
+    ServiceStartMode StartMode { get; set; }
+
     #endregion
 
 
