@@ -4,7 +4,7 @@
   public enum ServiceStartMode : int
   {
     DontStart = 0,
-    OnStartAll = 1,
+    OnStartAll2Attack = 1,
     OnStartSingle = 2
   }
 }
