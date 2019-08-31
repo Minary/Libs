@@ -39,5 +39,7 @@
 
     void OnStopAttack();
 
+    void OnVerbose(bool isVerboseOn);
+
   }
 }
