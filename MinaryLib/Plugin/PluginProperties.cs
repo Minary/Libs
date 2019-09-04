@@ -15,6 +15,8 @@
 
     public string PluginType { get; set; }
 
+    public string AttackServiceDependency { get; set; }
+
     public string PluginDescription { get; set; }
 
     public Dictionary<int, IpProtocols> Ports { get; set; }
